@@ -9,7 +9,7 @@ The module allows creating operators and withdraw whitelists.
 To use it, follow the initial setup steps.
 
 Initial setup:
-- Deploy a safe with you choice of multi-sig owners.
+- Deploy a safe with your choice of multi-sig owners.
 - Deploy this contract, specifying the Safe and exchange addresses, which are immutable.
 - Add this contract as a module in the Safe UI.
 - Via the Safe UI, make calls to the functions `addOperator(address)` and `addWhitelist(address)`
