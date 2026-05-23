@@ -16,3 +16,13 @@ Initial setup:
 
 Usage:
 - An operator can call `depositToExchange` and `withdrawTo` functions.
+
+`TradeForwarder` is a thin wrapper around the exchange `batchCommands` call.
+The forwarder resolves your exchange user id from `msg.sender`, so approving the forwarder on your account does not let other addresses trade as you.
+
+Initial setup:
+- Deploy `TradeForwarder` with the exchange contract address.
+- On the exchange, call `allowTradingForAccount(userId, forwarderAddress)` for your account.
+
+Usage:
+- Call `batchCommands(commands)` on the forwarder with a non-empty command array (same encoding as calling the exchange directly).
